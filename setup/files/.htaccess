@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Close access to git repo
+RedirectMatch 404 /\.git
+
+# Disable directory indexing
+Options -Indexes
+
+RewriteRule ^/?w/rest.php/ - [L,NC]
+
+# Image authorization support
+RewriteRule ^/?w/img_auth.php/ - [L]
+
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-d
+RewriteRule ^/?wiki(/.*)?$ %{DOCUMENT_ROOT}/w/index.php [L]
+RewriteRule ^/?$ %{DOCUMENT_ROOT}/w/index.php [L]

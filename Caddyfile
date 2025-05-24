@@ -1,0 +1,36 @@
+# General Options
+{
+    #tls internal
+}
+
+# Common configuration snippet
+(common) {
+	# Enable gzip encoding
+	# encode gzip zstd
+
+	# Let's not expose the server
+	header {
+		-Server
+	}
+}
+
+# Site options
+http://localhost {
+	# some headers like Host or X-Forwarded-For being added automatically,
+	# see https://caddyserver.com/docs/caddyfile/directives/reverse_proxy#defaults
+	reverse_proxy webserver:80 {
+		header_up X-Real-IP {remote_host}
+	}
+
+	import common
+}
+
+http://host.docker.internal {
+	# some headers like Host or X-Forwarded-For being added automatically,
+	# see https://caddyserver.com/docs/caddyfile/directives/reverse_proxy#defaults
+	reverse_proxy webserver:80 {
+		header_up X-Real-IP {remote_host}
+	}
+
+	import common
+}
