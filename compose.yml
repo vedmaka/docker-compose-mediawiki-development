@@ -33,8 +33,8 @@ services:
     ports:
       - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
     volumes:
+      - mysql-data:/var/lib/mysql
       - ${MYSQL_INITDB_DIR-./setup/config/initdb}:/docker-entrypoint-initdb.d
-      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
       - ./setup/files/mysql_password.txt:/mysql_password.txt
     environment:
@@ -75,3 +75,4 @@ services:
 volumes:
   caddy-data:
   mailhog:
+  mysql-data:
