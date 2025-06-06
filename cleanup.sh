@@ -22,4 +22,6 @@ find logs/xdebug -type f ! -name '.gitignore' -delete
 find data/mysql -type f ! -name '.gitignore' -delete
 find data/mysql -type d -delete
 
+docker compose down -v
+
 echo "Done!"
