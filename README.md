@@ -20,3 +20,4 @@ git submodule update --remote --merge --recursive
 # Xdebug
 
 Control with `PHP_XDEBUG_MODE=off` environment variable. Port is by `XDEBUG_PORT`
+For Xdebug to work in PHPStorm, you need to set the path mappings.

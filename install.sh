@@ -56,4 +56,8 @@ echo "Running composer updates.."
 
 docker compose exec webserver composer update
 
+docker compose exec webserver bash -c 'echo "\$wgArticlePath = \"/wiki/\$1\";" >> /var/www/html/w/LocalSettings.php'
+
+ln -s www/w/LocalSettings.php .
+
 echo "Done! Visit http://localhost:80 (default configuration)"
