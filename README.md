@@ -16,3 +16,7 @@ git submodule foreach --recursive `git fetch --unshallow || echo "Already full"`
 
 ## 3. (Optional) Update submodules to latest remote commits
 git submodule update --remote --merge --recursive
+
+# Xdebug
+
+Control with `PHP_XDEBUG_MODE=off` environment variable. Port is by `XDEBUG_PORT`

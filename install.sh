@@ -48,7 +48,7 @@ docker compose exec webserver php maintenance/install.php \
     --scriptpath "/w" \
     --lang "en" \
     --pass "dockerdocker" \
-    --skins "" \
+    --skins "vector" \
     "mediawiki" \
     "Admin"
 

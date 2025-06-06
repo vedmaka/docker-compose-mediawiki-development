@@ -19,6 +19,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       HOST_MACHINE_MYSQL_PORT: ${HOST_MACHINE_MYSQL_PORT}
+      PHP_XDEBUG_MODE: ${PHP_XDEBUG_MODE-off}
       #FEATURES_ENABLED: ENABLE_APPS_ICON,ENABLE_PUBLIC_PATIENT
       #XDEBUG_CONFIG: "client_host=host.docker.internal client_port=${XDEBUG_PORT} remote_port=${XDEBUG_PORT}"
     extra_hosts:
