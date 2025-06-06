@@ -56,4 +56,4 @@ echo "Running composer updates.."
 
 docker compose exec webserver composer update
 
-echo "Done! Visit http://localhost:3000 (default configuration)"
+echo "Done! Visit http://localhost:80 (default configuration)"
