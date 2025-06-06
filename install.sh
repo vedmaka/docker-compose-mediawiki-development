@@ -17,10 +17,7 @@ fi
 
 echo "Cloning mediawiki.."
 
-git clone -b "$1" --depth 1 https://github.com/wikimedia/mediawiki.git www/w || exit 1
-cd www/w || exit 1
-git submodule update --init --recursive
-cd ../.. || exit 1
+git clone -b "$1" --depth 1 --recurse-submodules --shallow-submodules https://github.com/wikimedia/mediawiki.git www/w || exit 1
 cp setup/files/.htaccess www/
 cp setup/files/composer.local.json www/w/
 
@@ -59,4 +56,4 @@ echo "Running composer updates.."
 
 docker compose exec webserver composer update
 
-echo "Done! Run 'docker compose up -d' to start the wiki"
+echo "Done! Visit http://localhost:3000 (default configuration)"
