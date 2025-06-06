@@ -59,4 +59,4 @@ echo "Running composer updates.."
 
 docker compose exec webserver composer update
 
-echo "Done!"
+echo "Done! Run 'docker compose up -d' to start the wiki"
