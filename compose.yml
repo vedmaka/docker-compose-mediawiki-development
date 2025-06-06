@@ -3,7 +3,7 @@ services:
     build:
       context: "./setup/bin/${PHPVERSION}"
     container_name: "${COMPOSE_PROJECT_NAME}-${PHPVERSION}"
-    restart: "always"
+    restart: unless-stopped
     volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html:rw
       - ${PHP_INI-./setup/config/php/php.ini}:/usr/local/etc/php/php.ini
@@ -29,7 +29,7 @@ services:
     build:
       context: "./setup/bin/${DATABASE}"
     container_name: "${COMPOSE_PROJECT_NAME}-${DATABASE}"
-    restart: "always"
+    restart: unless-stopped
     ports:
       - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
     volumes:
@@ -46,6 +46,7 @@ services:
   redis_job:
     container_name: "${COMPOSE_PROJECT_NAME}-redis_job"
     image: redis:latest
+    restart: unless-stopped
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
 
