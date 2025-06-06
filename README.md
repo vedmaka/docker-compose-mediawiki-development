@@ -12,7 +12,7 @@
 git fetch --unshallow
 
 ## 2. Unshallow all submodules
-git submodule foreach --recursive 'git fetch --unshallow || echo "Already full"'
+git submodule foreach --recursive `git fetch --unshallow || echo "Already full"`
 
 ## 3. (Optional) Update submodules to latest remote commits
 git submodule update --remote --merge --recursive
