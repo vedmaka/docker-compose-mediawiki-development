@@ -21,3 +21,9 @@ git submodule update --remote --merge --recursive
 
 Control with `PHP_XDEBUG_MODE=off` environment variable. Port is by `XDEBUG_PORT`
 For Xdebug to work in PHPStorm, you need to set the path mappings.
+
+# Exporting
+
+```bash
+docker compose exec webserver php maintenance/dumpBackup.php --current --report 1 --filter=namespace:0 > pagedump.xml
+```
