@@ -60,4 +60,7 @@ docker compose exec webserver bash -c 'echo "\$wgArticlePath = \"/wiki/\$1\";" >
 
 ln -s www/w/LocalSettings.php .
 
-echo "Done! Visit http://localhost:80 (default configuration)"
+echo "Done!"
+echo "Visit http://localhost:80 (default configuration)"
+echo "Username: Admin"
+echo "Password: dockerdocker"
